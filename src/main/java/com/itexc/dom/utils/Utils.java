@@ -7,8 +7,7 @@ import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.exceptions.ValidationException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.crypto.spec.SecretKeySpec;
+import org.apache.commons.text.RandomStringGenerator;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -100,6 +99,13 @@ public abstract class Utils {
         } catch (IOException e) {
             log.error("Failed to write mq files", e);
         }
+
+    }
+
+    public static String getDefaultPassword(int length) {
+        RandomStringGenerator pwdGenerator = new RandomStringGenerator.Builder().withinRange(33, 126)
+                .build();
+        return pwdGenerator.generate(length);
 
     }
 
