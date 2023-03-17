@@ -27,6 +27,13 @@ public class PrivilegeView {
         this.code = privilege.getCode();
     }
 
+    public PrivilegeView(Privilege privilege) {
+        this.id = privilege.getId();
+        this.description = privilege.getDescription();
+        this.code = privilege.getCode();
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

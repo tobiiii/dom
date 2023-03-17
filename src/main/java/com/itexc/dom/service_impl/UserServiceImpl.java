@@ -5,6 +5,7 @@ import com.itexc.dom.domain.DTO.AuthenticationResponse;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.Password;
 import com.itexc.dom.domain.Privilege;
+import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.projection.UserView;
@@ -14,6 +15,7 @@ import com.itexc.dom.repository.UserRepository;
 import com.itexc.dom.security.TokenProvider;
 import com.itexc.dom.security.WebSecurityConfig;
 import com.itexc.dom.sevice.DBSessionService;
+import com.itexc.dom.sevice.ProfileService;
 import com.itexc.dom.sevice.UserService;
 import com.itexc.dom.utils.ParamsProvider;
 import jakarta.servlet.http.HttpServletRequest;
@@ -60,6 +62,10 @@ public class UserServiceImpl implements UserService {
     private TokenProvider tokenProvider;
 
     @Autowired
+    private ProfileService profileService;
+
+
+    @Autowired
     SecurityCustomizationRepository securityCustomizationRepository;
 
 
@@ -71,13 +77,14 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserView create(UserDto user) throws ValidationException {
+    public UserView create(UserDto user) throws Throwable {
         User newUser = new User();
         if (userRepository.existsByEmailAddressIgnoreCase(user.getEmailAddress().toLowerCase())) {
             throw new ValidationException(ERROR_CODE.EMAIL_EXISTS);
         }
         String generatedPassword = Utils.getDefaultPassword(paramsProvider.getGeneratedPasswordLength());
-
+        Profile profile = profileService.findById(user.getProfile());
+        newUser.setProfile(profile);
         newUser.setLastName(user.getLastName());
         newUser.setFirstName(user.getFirstName());
         newUser.setEmailAddress(user.getEmailAddress());
@@ -201,7 +208,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmailAddressIgnoreCase(email)
                 .orElseThrow(() -> new ValidationException(ERROR_CODE.INCORRECT_EMAIL));
     }
-
     public void checkPassword(String pwd , User user) throws ValidationException {
 
         if (!webSecurityConfig.passwordEncoder().matches(pwd, user.getPassword().getCredential())) {
@@ -210,5 +216,11 @@ public class UserServiceImpl implements UserService {
                 userRepository.save(user);
         }
     }
+
+    @Override
+    public boolean isProfileAttributed(Profile profile) {
+        return userRepository.existsByProfile(profile);
+    }
+
 
 }

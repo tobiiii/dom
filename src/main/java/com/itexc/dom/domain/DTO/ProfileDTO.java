@@ -31,11 +31,6 @@ public class ProfileDTO {
     @NotEmpty(message = "Nom {REQUIRED}")
     private String name;
 
-    @NotNull(message = "Couleur {REQUIRED}")
-    @NotBlank(message = "Couleur {REQUIRED}")
-    @NotEmpty(message = "Couleur {REQUIRED}")
-    private String color;
-
     private Date created;
     private Date updated;
 

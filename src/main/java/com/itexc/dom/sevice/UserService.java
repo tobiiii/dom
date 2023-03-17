@@ -3,6 +3,7 @@ package com.itexc.dom.sevice;
 import com.itexc.dom.domain.DTO.AuthenticationRequest;
 import com.itexc.dom.domain.DTO.AuthenticationResponse;
 import com.itexc.dom.domain.DTO.UserDto;
+import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
@@ -15,7 +16,7 @@ public interface UserService {
 
     Page<UserView> getAllUsers(Pageable pageable);
 
-    UserView create(UserDto user) throws ValidationException;
+    UserView create(UserDto user) throws Throwable;
 
     User update(Long userId, UserDto user) throws ValidationException;
 
@@ -34,6 +35,9 @@ public interface UserService {
                                           HttpServletRequest request, HttpServletResponse response) throws Throwable;
 
     User checkEmail(String email) throws ValidationException;
+
+    boolean isProfileAttributed(Profile profile);
+
 }
 
 
