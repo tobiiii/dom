@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springdoc.api.annotations.ParameterObject;
 
@@ -33,8 +34,8 @@ public class UserController {
     //@PreAuthorize("hasAuthority('user.add')")
     @PostMapping(value = "/add")
     public JsonResponse add(@Valid @RequestBody final UserDto user) throws Throwable {
-        User newUser = userService.create(user);
-        return JsonResponse.builder().data(new UserView(newUser))
+        UserView newUser = userService.create(user);
+        return JsonResponse.builder().data(newUser)
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
 
