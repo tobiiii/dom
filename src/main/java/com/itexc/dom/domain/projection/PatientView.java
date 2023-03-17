@@ -1,6 +1,7 @@
 package com.itexc.dom.domain.projection;
 
 import com.itexc.dom.domain.Patient;
+import com.itexc.dom.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,11 +15,7 @@ public class PatientView {
 
 
     private Long id;
-    private String login;
-    private String firstName;
-    private String lastName;
-    private String emailAddress;
-    private Boolean isLocked;
+    private User user;
     private Date created;
     private Date updated;
     private String defaultPass;
@@ -28,9 +25,7 @@ public class PatientView {
 
     public PatientView(Patient patient) {
         this.id = patient.getId();
-        this.firstName = patient.getUser().getFirstName();
-        this.lastName = patient.getUser().getLastName();
-        this.emailAddress = patient.getUser().getEmailAddress();
+        this.user = patient.getUser();
         this.created = patient.getCreated();
         this.updated = patient.getUpdated();
         this.address = patient.getAddress();

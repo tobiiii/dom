@@ -18,7 +18,6 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public class Patient extends  CommonEntity{
 
-    @DateTimeFormat
     @Column(nullable = false)
     private Date dateOfBirth;
 
