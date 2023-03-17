@@ -28,9 +28,9 @@ public class PatientView {
 
     public PatientView(Patient patient) {
         this.id = patient.getId();
-        this.firstName = patient.getFirstName();
-        this.lastName = patient.getLastName();
-        this.emailAddress = patient.getEmailAddress();
+        this.firstName = patient.getUser().getFirstName();
+        this.lastName = patient.getUser().getLastName();
+        this.emailAddress = patient.getUser().getEmailAddress();
         this.created = patient.getCreated();
         this.updated = patient.getUpdated();
         this.address = patient.getAddress();

@@ -17,11 +17,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(callSuper = true)
-@Table(uniqueConstraints = {
-        @UniqueConstraint(columnNames = "emailAddress", name = "uk_user_email_address")
-})
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "dtype")
+@Table(uniqueConstraints =
+        {@UniqueConstraint(columnNames = "emailAddress", name = "uk_user_email_address")})
 public class User extends CommonEntity{
 
     @JsonIgnore
@@ -40,10 +37,6 @@ public class User extends CommonEntity{
     @Email
     @Column(nullable = false)
     private String emailAddress;
-
-    @JsonIgnore
-    @Column(insertable = false, updatable = false)
-    private String dtype;
 
 
     @NotNull

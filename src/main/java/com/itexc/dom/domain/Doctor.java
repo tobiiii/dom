@@ -1,20 +1,34 @@
 package com.itexc.dom.domain;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotNull;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @EqualsAndHashCode(callSuper = true)
-public class Doctor extends  User{
+public class Doctor extends CommonEntity{
 
     @NotBlank
     @Column(nullable = false)
     private String specialization;
+
+    @NotNull
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "fk_doctor_user"))
+    private User user;
+
 
 
 }

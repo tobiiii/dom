@@ -1,7 +1,5 @@
 package com.itexc.dom.domain.DTO;
 
-import com.itexc.dom.validation.ValidEmail;
-import com.itexc.dom.validation.ValidName;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,17 +14,8 @@ import java.util.Date;
 @NoArgsConstructor
 public class PatientDto {
 
-    @ValidName
-    private String firstName;
-
-    @ValidName
-    private String lastName;
-
-    @ValidEmail
-    private String emailAddress;
-
-    @NotNull(message = "Profil {REQUIRED}")
-    private Long profile;
+    @NotNull(message = "user {REQUIRED}")
+    private Long user;
 
     @DateTimeFormat
     private Date dateOfBirth;

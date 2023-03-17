@@ -28,9 +28,9 @@ public class DoctorView {
 
     public DoctorView(Doctor doctor) {
         this.id = doctor.getId();
-        this.firstName = doctor.getFirstName();
-        this.lastName = doctor.getLastName();
-        this.emailAddress = doctor.getEmailAddress();
+        this.firstName = doctor.getUser().getFirstName();
+        this.lastName = doctor.getUser().getLastName();
+        this.emailAddress = doctor.getUser().getEmailAddress();
         this.created = doctor.getCreated();
         this.updated = doctor.getUpdated();
         this.specialization = doctor.getSpecialization();
