@@ -34,6 +34,9 @@ public interface UserService {
     AuthenticationResponse authentication(AuthenticationRequest authenticationRequest,
                                           HttpServletRequest request, HttpServletResponse response) throws Throwable;
 
+    AuthenticationResponse renewSession(String tokenId, HttpServletRequest request) throws Throwable;
+
+
     User checkEmail(String email) throws ValidationException;
 
     boolean isProfileAttributed(Profile profile);

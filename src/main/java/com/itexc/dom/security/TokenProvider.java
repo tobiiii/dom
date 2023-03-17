@@ -94,6 +94,19 @@ public class TokenProvider implements Serializable {
 
     }
 
+    public String getIdFromExpiredToken(String expiredToken) throws ValidationException {
+        String id;
+        try {
+            getIdFromToken(expiredToken);
+            //If token not expired (valid) throw exception TOKEN_ALREADY_VALID
+            throw new ValidationException(ERROR_CODE.TOKEN_ALREADY_VALID);
+        } catch (ExpiredJwtException e) {
+            id = e.getClaims().getId();
+        }
+        return id;
+    }
+
+
     public String getTokenFromRequest(HttpServletRequest req) throws ValidationException {
         String auth = req.getHeader(paramsProvider.getAuthorizationHeader());
         if (StringUtils.isEmpty(auth)) {

@@ -12,6 +12,7 @@ import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.SecurityCustomizationRepository;
 import com.itexc.dom.repository.UserRepository;
+import com.itexc.dom.security.DomWebAuthenticationDetails;
 import com.itexc.dom.security.TokenProvider;
 import com.itexc.dom.security.WebSecurityConfig;
 import com.itexc.dom.sevice.DBSessionService;
@@ -35,6 +36,8 @@ import com.itexc.dom.utils.Utils;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -63,6 +66,10 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private ProfileService profileService;
+
+    @Autowired
+    private UserDetailsServiceImpl userDetailsServiceImpl;
+
 
 
     @Autowired
@@ -221,6 +228,49 @@ public class UserServiceImpl implements UserService {
     public boolean isProfileAttributed(Profile profile) {
         return userRepository.existsByProfile(profile);
     }
+
+    @Override
+    public AuthenticationResponse renewSession(String tokenId, HttpServletRequest request)
+            throws Throwable {
+
+        final var expiredToken = tokenProvider.getTokenFromRequest(request);
+        final var expiredTokenId = tokenProvider.getIdFromExpiredToken(expiredToken);
+
+        if (!expiredTokenId.equals(tokenId)) {
+            throw new ValidationException(ERROR_CODE.DIFFERENT_TOKEN);
+        }
+
+        //Check existence of token
+        var optionalSession = dbSessionService.findBy("token", expiredTokenId);
+
+        //Check session
+        dbSessionService.checkSession(optionalSession);
+        var dbSession = optionalSession.get();
+
+        //Check allowed duration to refresh token
+        Instant deadline = dbSession.getLogoutTime().toInstant().plus(paramsProvider.getRefreshTokenDuration(), ChronoUnit.MINUTES);
+        if (deadline.isBefore(Instant.now())) {
+            dbSessionService.disconnectByToken(expiredTokenId);
+            throw new ValidationException(ERROR_CODE.EXPIRED_TOKEN);
+        }
+
+        var user = dbSession.getUser();
+
+        final String accessToken = tokenProvider.generateToken(user, null);
+
+        var userDetails = userDetailsServiceImpl.loadUserByUsername(dbSession.getEmail(), dbSession);
+        var authentication = tokenProvider.getAuthenticationToken(accessToken, userDetails);
+        var webDetails = new DomWebAuthenticationDetails(request);
+        authentication.setDetails(webDetails);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        dbSessionService.refreshToken(expiredTokenId, accessToken);
+
+        String refreshToken = tokenProvider.getIdFromToken(accessToken);
+
+        return new AuthenticationResponse(accessToken, refreshToken);
+    }
+
 
 
 }
