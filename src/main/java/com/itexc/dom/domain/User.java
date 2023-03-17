@@ -20,7 +20,8 @@ import javax.validation.constraints.NotNull;
 @Table(uniqueConstraints = {
         @UniqueConstraint(columnNames = "emailAddress", name = "uk_user_email_address")
 })
-
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "dtype")
 public class User extends CommonEntity{
 
     @JsonIgnore
@@ -39,6 +40,11 @@ public class User extends CommonEntity{
     @Email
     @Column(nullable = false)
     private String emailAddress;
+
+    @JsonIgnore
+    @Column(insertable = false, updatable = false)
+    private String dtype;
+
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

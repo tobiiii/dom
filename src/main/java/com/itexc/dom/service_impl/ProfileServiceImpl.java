@@ -2,7 +2,7 @@ package com.itexc.dom.service_impl;
 
 import com.itexc.dom.domain.CommonEntity;
 
-import com.itexc.dom.domain.DTO.ProfileDTO;
+import com.itexc.dom.domain.DTO.ProfileDto;
 import com.itexc.dom.domain.Privilege;
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.enums.ERROR_CODE;
@@ -58,16 +58,16 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public ProfileDTO getDetailsProfile(Long id) throws Throwable {
+    public ProfileDto getDetailsProfile(Long id) throws Throwable {
         Profile profile = findById(id);
-        ProfileDTO profileDTO = new ProfileDTO(profile);
+        ProfileDto profileDTO = new ProfileDto(profile);
         List<PrivilegeView> privileges = privilegeService.fromPrivilegesListToPrivilegesViewList(
                 profile.getPrivileges());
         profileDTO.setPrivileges(privileges);
         return profileDTO;
     }
 
-    public  Profile create(ProfileDTO profile) throws Throwable {
+    public  Profile create(ProfileDto profile) throws Throwable {
         checkProfile(profile);
         Profile createdProfile = new Profile();
         createdProfile.setCode(profile.getCode());
@@ -75,7 +75,7 @@ public class ProfileServiceImpl implements ProfileService {
         return createdProfile;
     }
 
-    public  Profile update(Long profileId, ProfileDTO profile) throws Throwable {
+    public  Profile update(Long profileId, ProfileDto profile) throws Throwable {
         Profile updatedProfile = findById(profileId);
         if (isPrivilegesListChanged(profile.getPrivileges().stream().map(PrivilegeView::getId).collect(Collectors.toList()), updatedProfile.getPrivileges())) {
             dbSessionService.disconnectByProfile(updatedProfile);
@@ -87,7 +87,7 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
 
-    private void checkProfile(ProfileDTO profile) throws ValidationException {
+    private void checkProfile(ProfileDto profile) throws ValidationException {
         if (profileRepository.existsByName(profile.getName()))
             throw new ValidationException(ERROR_CODE.NAME_EXISTS);
 

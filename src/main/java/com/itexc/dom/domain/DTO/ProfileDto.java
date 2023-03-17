@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProfileDTO {
+public class ProfileDto {
 
     @NotNull(message = "Identifiant {REQUIRED}")
     private Long id;
@@ -39,7 +39,7 @@ public class ProfileDTO {
     private List<PrivilegeView> privileges;
 
 
-    public ProfileDTO(Profile profile) {
+    public ProfileDto(Profile profile) {
         this.id = profile.getId();
         this.code = profile.getCode();
         this.name = profile.getName();
