@@ -1,9 +1,13 @@
 package com.itexc.dom.sevice;
 
+import com.itexc.dom.domain.DTO.AuthenticationRequest;
+import com.itexc.dom.domain.DTO.AuthenticationResponse;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -11,7 +15,7 @@ public interface UserService {
 
     Page<UserView> getAllUsers(Pageable pageable);
 
-    User create(UserDto user) throws ValidationException;
+    UserView create(UserDto user) throws ValidationException;
 
     User update(Long userId, UserDto user) throws ValidationException;
 
@@ -24,6 +28,12 @@ public interface UserService {
 
     void delete(Long userId) throws ValidationException;
 
+    User getConnectedUser() throws ValidationException;
+
+    AuthenticationResponse authentication(AuthenticationRequest authenticationRequest,
+                                          HttpServletRequest request, HttpServletResponse response) throws Throwable;
+
+    User checkEmail(String email) throws ValidationException;
 }
 
 

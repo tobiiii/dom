@@ -22,6 +22,8 @@ public class UserView {
     private Date created;
     private Date updated;
 
+    private String defaultPass;
+
 
     public UserView(User user) {
         this.id = user.getId();

@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,5 +39,14 @@ public class User extends CommonEntity{
     @Email
     @Column(nullable = false)
     private String emailAddress;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(
+            name = "profile_id",
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "fk_user_profile"))
+    private Profile profile;
+
 
 }
