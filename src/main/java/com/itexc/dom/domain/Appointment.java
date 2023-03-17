@@ -19,7 +19,7 @@ import java.util.Date;
 public class Appointment extends  CommonEntity{
 
     @NotNull
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(
             name = "doctor_id",
             referencedColumnName = "id",
@@ -27,7 +27,7 @@ public class Appointment extends  CommonEntity{
     private Doctor doctor;
 
     @NotNull
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(
             name = "patient_id",
             referencedColumnName = "id",
