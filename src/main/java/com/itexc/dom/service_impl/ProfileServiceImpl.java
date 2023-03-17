@@ -51,6 +51,12 @@ public class ProfileServiceImpl implements ProfileService {
                 .orElseThrow(() -> new ValidationException(ERROR_CODE.INEXISTANT_PROFILE));
     }
 
+    @Override
+    public Profile findByCode(String code, ERROR_CODE error) throws Throwable {
+        return (Profile) profileRepository.findByCode(code)
+                .orElseThrow(() -> new ValidationException(error));
+    }
+
 
     @Override
     public  List<ProfileView> findAllProfiles() {

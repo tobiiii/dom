@@ -15,7 +15,7 @@ public class DoctorView {
 
 
     private Long id;
-    private User user;
+    private UserView user;
     private Date created;
     private Date updated;
     private String defaultPass;
@@ -25,7 +25,7 @@ public class DoctorView {
 
     public DoctorView(Doctor doctor) {
         this.id = doctor.getId();
-        this.user = doctor.getUser();
+        this.user = new UserView(doctor.getUser());
         this.created = doctor.getCreated();
         this.updated = doctor.getUpdated();
         this.specialization = doctor.getSpecialization();
