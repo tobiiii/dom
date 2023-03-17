@@ -2,6 +2,7 @@ package com.itexc.dom.sevice;
 
 import com.itexc.dom.domain.DTO.AuthenticationRequest;
 import com.itexc.dom.domain.DTO.AuthenticationResponse;
+import com.itexc.dom.domain.DTO.ChangePasswordDto;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
@@ -25,7 +26,7 @@ public interface UserService {
     UserView getUserById(Long userId) throws Throwable;
 
 
-    //void changePassword(ChangePasswordDto passwordDto);
+    void changePassword(ChangePasswordDto passwordDto) throws ValidationException;
 
     void delete(Long userId) throws ValidationException;
 

@@ -1,8 +1,10 @@
 package com.itexc.dom.controller;
 
+import com.itexc.dom.domain.DTO.ChangePasswordDto;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.projection.UserView;
+import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.sevice.UserService;
 import com.itexc.dom.utils.JsonResponse;
 import jakarta.validation.Valid;
@@ -69,5 +71,14 @@ public class UserController {
         return JsonResponse.builder().data(null)
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
+
+    @PreAuthorize("isFullyAuthenticated()")
+    @PostMapping(value = "/admin/change_password")
+    public JsonResponse adminChangePassword(@javax.validation.Valid @RequestBody ChangePasswordDto password) throws ValidationException {
+        userService.changePassword(password);
+        return JsonResponse.builder().data(null)
+                .status(JsonResponse.STATUS.SUCCESS).build();
+    }
+
 
 }

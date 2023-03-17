@@ -2,6 +2,7 @@ package com.itexc.dom.service_impl;
 
 import com.itexc.dom.domain.DTO.AuthenticationRequest;
 import com.itexc.dom.domain.DTO.AuthenticationResponse;
+import com.itexc.dom.domain.DTO.ChangePasswordDto;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.Password;
 import com.itexc.dom.domain.Privilege;
@@ -33,6 +34,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import com.itexc.dom.utils.Utils;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -271,6 +273,21 @@ public class UserServiceImpl implements UserService {
         return new AuthenticationResponse(accessToken, refreshToken);
     }
 
+    public  void changePassword(ChangePasswordDto passwordDto) throws ValidationException {
+        User user = getConnectedUser();
+        if (user == null) {
+            throw new ValidationException(ERROR_CODE.INVALID_SESSION);
+        }
+        //If the old password match the current one
+        checkPassword(passwordDto.getOldPassword(), user);
+        savePassword(passwordDto.getNewPassword(), user);
+    }
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public <E extends User> void savePassword(String password, E user) {
+        user.getPassword().setCredential(webSecurityConfig.passwordEncoder().encode(password));
+        user.getPassword().setIsTemporary(false);
+        securityCustomizationRepository.save(user.getPassword());
+    }
 
 
 }
