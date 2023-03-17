@@ -7,12 +7,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PrescriptionDto {
+public class MedicalHistoryDto {
 
     @NotNull(message = "doctor {REQUIRED}")
     private Long doctor;
@@ -21,18 +20,10 @@ public class PrescriptionDto {
     private Long patient;
 
     @NotBlank
-    private String medication;
-
-    @NotNull
-    private Integer dosage;
-
-    @NotNull
-    private Integer frequency;
-
-    @NotNull
-    private Date startDate;
-
-    @NotNull
-    private Date endDate;
+    private String notes;
+    @NotBlank
+    private String diagnosis;
+    @NotBlank
+    private String treatment;
 
 }
