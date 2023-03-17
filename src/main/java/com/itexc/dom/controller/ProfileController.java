@@ -26,10 +26,7 @@ public class ProfileController {
                   "'user.list'," +
                   "'user.add'," +
                   "'user.update'," +
-                  "'user.changeStatus'," +
-                  "'user.resetPassword'," +
                   "'user.detail'," +
-                  "'user.unlock'," +
                   "'user.delete'," +
                   "'profile.list'," +
                   "'profile.add'," +
