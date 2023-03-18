@@ -19,7 +19,4 @@ public interface AppointmentRepository <T extends Appointment> extends JpaReposi
     @Query("select a from Appointment a where a.patient = :patient")
     List<Appointment> findAllByPatient(Patient patient);
 
-
-
-
 }

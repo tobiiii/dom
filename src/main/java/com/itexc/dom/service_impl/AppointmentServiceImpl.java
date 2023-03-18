@@ -46,7 +46,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public Appointment update(Long appointmentId, AppointmentDto appointment) throws Throwable {
-        Appointment appointmentToUpdate = new Appointment();
+        Appointment appointmentToUpdate = findById(appointmentId);
         appointmentToUpdate.setReason(appointment.getReason());
         appointmentToUpdate.setDateAndTime(appointment.getDateAndTime());
         return (Appointment) appointmentRepository.save(appointmentToUpdate);

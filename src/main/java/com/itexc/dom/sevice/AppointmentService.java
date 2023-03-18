@@ -2,7 +2,6 @@ package com.itexc.dom.sevice;
 
 import com.itexc.dom.domain.Appointment;
 import com.itexc.dom.domain.DTO.AppointmentDto;
-import com.itexc.dom.domain.Patient;
 import com.itexc.dom.domain.projection.AppointmentView;
 
 import java.util.List;
