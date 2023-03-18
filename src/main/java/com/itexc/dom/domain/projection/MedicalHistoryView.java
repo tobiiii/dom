@@ -12,17 +12,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MedicalHistoryView {
 
-    private Doctor doctor;
 
-    private Patient patient;
+    private Long id;
+
+    private DoctorView doctor;
+
+    private PatientView patient;
 
     private String diagnosis;
     private String treatment;
     private String notes;
 
     public MedicalHistoryView(MedicalHistory medicalHistory) {
-        this.doctor = medicalHistory.getDoctor();
-        this.patient = medicalHistory.getPatient();
+        this.id = medicalHistory.getId();
+        this.doctor = new DoctorView(medicalHistory.getDoctor());
+        this.patient = new PatientView(medicalHistory.getPatient());
         this.diagnosis = medicalHistory.getDiagnosis();
         this.treatment = medicalHistory.getTreatment();
         this.notes = medicalHistory.getNotes();

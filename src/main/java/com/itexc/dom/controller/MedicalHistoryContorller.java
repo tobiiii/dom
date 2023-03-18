@@ -69,7 +69,7 @@ public class MedicalHistoryContorller {
     }
 
     @PreAuthorize("hasAuthority('medicalHistory.delete')")
-    @DeleteMapping(value = "/cancel/{medicalHistoryId}")
+    @DeleteMapping(value = "/delete/{medicalHistoryId}")
     public JsonResponse remove(
             @NotNull  @PathVariable Long medicalHistoryId) throws Throwable {
         medicalHistoryService.delete(medicalHistoryId);
