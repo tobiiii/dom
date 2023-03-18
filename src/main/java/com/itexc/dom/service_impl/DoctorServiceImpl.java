@@ -6,6 +6,7 @@ import com.itexc.dom.domain.Doctor;
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.enums.ERROR_CODE;
+import com.itexc.dom.domain.enums.ProfileCodeE;
 import com.itexc.dom.domain.projection.DoctorView;
 import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
@@ -32,7 +33,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorView create(DoctorDto doctor) throws Throwable {
-        Profile docProfile = profileService.findByCode("", ERROR_CODE.INEXISTANT_DOC_PROFILE);
+        Profile docProfile = profileService.findByCode(ProfileCodeE.DOCTOR.toString(), ERROR_CODE.INEXISTANT_DOC_PROFILE);
         UserDto userDto = new UserDto(doctor.getFirstName(), doctor.getLastName(), doctor.getEmailAddress(), docProfile.getId());
         UserView userView = userService.create(userDto);
         User newUser = userService.findUserById(userView.getId());
