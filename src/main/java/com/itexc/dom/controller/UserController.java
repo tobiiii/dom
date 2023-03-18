@@ -73,7 +73,7 @@ public class UserController {
     }
 
     @PreAuthorize("isFullyAuthenticated()")
-    @PostMapping(value = "/admin/change_password")
+    @PostMapping(value = "/change_password")
     public JsonResponse adminChangePassword(@javax.validation.Valid @RequestBody ChangePasswordDto password) throws ValidationException {
         userService.changePassword(password);
         return JsonResponse.builder().data(null)
