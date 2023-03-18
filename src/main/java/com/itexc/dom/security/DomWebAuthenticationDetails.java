@@ -1,6 +1,6 @@
 package com.itexc.dom.security;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.SpringSecurityCoreVersion;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;

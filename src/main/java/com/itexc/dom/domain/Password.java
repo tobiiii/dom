@@ -1,6 +1,6 @@
 package com.itexc.dom.domain;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

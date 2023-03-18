@@ -15,17 +15,6 @@ public class ContextHolder {
     private static final ThreadLocal<Map<String, Object>> THREAD_WITH_CONTEXT = new ThreadLocal<>();
 
 
-    private ContextHolder() {
-    }
-
-
-    public static void put(String key, Object payload) {
-        if (THREAD_WITH_CONTEXT.get() == null) {
-            THREAD_WITH_CONTEXT.set(new HashMap<>());
-        }
-        THREAD_WITH_CONTEXT.get().put(key, payload);
-    }
-
 
     public static Object get(String key) {
 
@@ -39,7 +28,4 @@ public class ContextHolder {
     }
 
 
-    public static void cleanUp() {
-        THREAD_WITH_CONTEXT.remove();
-    }
 }

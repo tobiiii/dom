@@ -1,14 +1,14 @@
 package com.itexc.dom.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import javax.validation.constraints.NotNull;
 
@@ -17,10 +17,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(callSuper = true)
-@Table(uniqueConstraints = {
-        @UniqueConstraint(columnNames = "emailAddress", name = "uk_user_email_address")
-})
-
+@Table(uniqueConstraints =
+        {@UniqueConstraint(columnNames = "emailAddress", name = "uk_user_email_address")})
 public class User extends CommonEntity{
 
     @JsonIgnore
@@ -39,6 +37,7 @@ public class User extends CommonEntity{
     @Email
     @Column(nullable = false)
     private String emailAddress;
+
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

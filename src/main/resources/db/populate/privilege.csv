@@ -1,0 +1,41 @@
+code,description
+profile.add,Créer
+profile.delete,Supprimer
+profile.detail,Détail
+profile.update,Modifier
+profile.list,Lister
+user.add,Créer
+user.delete,Supprimer
+user.detail,Détail
+user.update,Modifier
+user.list,Lister
+doctor.add,Créer
+doctor.delete,Supprimer
+doctor.detail,Détail
+doctor.update,Modifier
+doctor.list,Lister
+patient.add,Créer
+patient.delete,Supprimer
+patient.detail,Détail
+patient.update,Modifier
+patient.list,Lister
+patient.own_info,patient view his own info
+appointment.add,Créer
+appointment.cancel,Cancel
+appointment.end,accomplished
+appointment.detail,Détail
+appointment.update,Modifier
+appointment.list,Lister
+appointment.list_by_patient,Lister par patient
+prescription.add,Créer
+prescription.delete,Supprimer
+prescription.detail,Détail
+prescription.update,Modifier
+prescription.list,Lister
+prescription.list_by_patient,Lister par patient
+medicalHistory.add,Créer
+medicalHistory.delete,Supprimer
+medicalHistory.detail,Détail
+medicalHistory.update,Modifier
+medicalHistory.list,Lister
+medicalHistory.list_by_patient,Lister par patient

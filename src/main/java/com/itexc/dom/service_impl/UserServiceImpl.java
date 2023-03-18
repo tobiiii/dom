@@ -2,22 +2,26 @@ package com.itexc.dom.service_impl;
 
 import com.itexc.dom.domain.DTO.AuthenticationRequest;
 import com.itexc.dom.domain.DTO.AuthenticationResponse;
+import com.itexc.dom.domain.DTO.ChangePasswordDto;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.Password;
 import com.itexc.dom.domain.Privilege;
+import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.SecurityCustomizationRepository;
 import com.itexc.dom.repository.UserRepository;
+import com.itexc.dom.security.DomWebAuthenticationDetails;
 import com.itexc.dom.security.TokenProvider;
 import com.itexc.dom.security.WebSecurityConfig;
 import com.itexc.dom.sevice.DBSessionService;
+import com.itexc.dom.sevice.ProfileService;
 import com.itexc.dom.sevice.UserService;
 import com.itexc.dom.utils.ParamsProvider;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,9 +34,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import com.itexc.dom.utils.Utils;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -60,6 +67,14 @@ public class UserServiceImpl implements UserService {
     private TokenProvider tokenProvider;
 
     @Autowired
+    private ProfileService profileService;
+
+    @Autowired
+    private UserDetailsServiceImpl userDetailsServiceImpl;
+
+
+
+    @Autowired
     SecurityCustomizationRepository securityCustomizationRepository;
 
 
@@ -71,13 +86,14 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserView create(UserDto user) throws ValidationException {
+    public UserView create(UserDto user) throws Throwable {
         User newUser = new User();
         if (userRepository.existsByEmailAddressIgnoreCase(user.getEmailAddress().toLowerCase())) {
             throw new ValidationException(ERROR_CODE.EMAIL_EXISTS);
         }
         String generatedPassword = Utils.getDefaultPassword(paramsProvider.getGeneratedPasswordLength());
-
+        Profile profile = profileService.findById(user.getProfile());
+        newUser.setProfile(profile);
         newUser.setLastName(user.getLastName());
         newUser.setFirstName(user.getFirstName());
         newUser.setEmailAddress(user.getEmailAddress());
@@ -201,7 +217,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmailAddressIgnoreCase(email)
                 .orElseThrow(() -> new ValidationException(ERROR_CODE.INCORRECT_EMAIL));
     }
-
     public void checkPassword(String pwd , User user) throws ValidationException {
 
         if (!webSecurityConfig.passwordEncoder().matches(pwd, user.getPassword().getCredential())) {
@@ -210,5 +225,69 @@ public class UserServiceImpl implements UserService {
                 userRepository.save(user);
         }
     }
+
+    @Override
+    public boolean isProfileAttributed(Profile profile) {
+        return userRepository.existsByProfile(profile);
+    }
+
+    @Override
+    public AuthenticationResponse renewSession(String tokenId, HttpServletRequest request)
+            throws Throwable {
+
+        final var expiredToken = tokenProvider.getTokenFromRequest(request);
+        final var expiredTokenId = tokenProvider.getIdFromExpiredToken(expiredToken);
+
+        if (!expiredTokenId.equals(tokenId)) {
+            throw new ValidationException(ERROR_CODE.DIFFERENT_TOKEN);
+        }
+
+        //Check existence of token
+        var optionalSession = dbSessionService.findBy("token", expiredTokenId);
+
+        //Check session
+        dbSessionService.checkSession(optionalSession);
+        var dbSession = optionalSession.get();
+
+        //Check allowed duration to refresh token
+        Instant deadline = dbSession.getLogoutTime().toInstant().plus(paramsProvider.getRefreshTokenDuration(), ChronoUnit.MINUTES);
+        if (deadline.isBefore(Instant.now())) {
+            dbSessionService.disconnectByToken(expiredTokenId);
+            throw new ValidationException(ERROR_CODE.EXPIRED_TOKEN);
+        }
+
+        var user = dbSession.getUser();
+
+        final String accessToken = tokenProvider.generateToken(user, null);
+
+        var userDetails = userDetailsServiceImpl.loadUserByUsername(dbSession.getEmail(), dbSession);
+        var authentication = tokenProvider.getAuthenticationToken(accessToken, userDetails);
+        var webDetails = new DomWebAuthenticationDetails(request);
+        authentication.setDetails(webDetails);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        dbSessionService.refreshToken(expiredTokenId, accessToken);
+
+        String refreshToken = tokenProvider.getIdFromToken(accessToken);
+
+        return new AuthenticationResponse(accessToken, refreshToken);
+    }
+
+    public  void changePassword(ChangePasswordDto passwordDto) throws ValidationException {
+        User user = getConnectedUser();
+        if (user == null) {
+            throw new ValidationException(ERROR_CODE.INVALID_SESSION);
+        }
+        //If the old password match the current one
+        checkPassword(passwordDto.getOldPassword(), user);
+        savePassword(passwordDto.getNewPassword(), user);
+    }
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public <E extends User> void savePassword(String password, E user) {
+        user.getPassword().setCredential(webSecurityConfig.passwordEncoder().encode(password));
+        user.getPassword().setIsTemporary(false);
+        securityCustomizationRepository.save(user.getPassword());
+    }
+
 
 }

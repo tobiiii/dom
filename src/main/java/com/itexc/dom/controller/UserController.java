@@ -1,12 +1,14 @@
 package com.itexc.dom.controller;
 
+import com.itexc.dom.domain.DTO.ChangePasswordDto;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.domain.projection.UserView;
+import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.sevice.UserService;
 import com.itexc.dom.utils.JsonResponse;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,7 +25,7 @@ public class UserController {
     private UserService userService;
 
 
-    //@PreAuthorize("hasAuthority('user.list')")
+    @PreAuthorize("hasAuthority('user.list')")
     @GetMapping(value = "/find_all")
     public JsonResponse findAll(@ParameterObject Pageable pageable) {
         Page<UserView> users = userService.getAllUsers(pageable);
@@ -31,7 +33,7 @@ public class UserController {
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
 
-    //@PreAuthorize("hasAuthority('user.add')")
+    @PreAuthorize("hasAuthority('user.add')")
     @PostMapping(value = "/add")
     public JsonResponse add(@Valid @RequestBody final UserDto user) throws Throwable {
         UserView newUser = userService.create(user);
@@ -39,7 +41,7 @@ public class UserController {
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
 
-    //@PreAuthorize("hasAuthority('user.update')")
+    @PreAuthorize("hasAuthority('user.update')")
     @PatchMapping(value = "/update/{userId}")
     public JsonResponse update(
             @NotNull(message = "Utilisateur {REQUIRED}") @PathVariable Long userId,
@@ -49,10 +51,10 @@ public class UserController {
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
 
-   /* @PreAuthorize("hasAnyAuthority(" +
+   @PreAuthorize("hasAnyAuthority(" +
             "'user.update'," +
             "'user.detail'," +
-            "'user.delete')")*/
+            "'user.delete')")
     @GetMapping(value = "/detail/{userId}")
     public JsonResponse detail(
             @NotNull(message = "Utilisateur {REQUIRED}") @PathVariable("userId") Long userId) throws Throwable {
@@ -61,9 +63,7 @@ public class UserController {
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
 
-/*
     @PreAuthorize("hasAuthority('user.delete')")
-*/
     @DeleteMapping(value = "/delete/{userId}")
     public JsonResponse delete(
             @NotNull(message = "Utilisateur {REQUIRED}") @PathVariable Long userId) throws Throwable {
@@ -71,5 +71,14 @@ public class UserController {
         return JsonResponse.builder().data(null)
                 .status(JsonResponse.STATUS.SUCCESS).build();
     }
+
+    @PreAuthorize("isFullyAuthenticated()")
+    @PostMapping(value = "/change_password")
+    public JsonResponse adminChangePassword(@javax.validation.Valid @RequestBody ChangePasswordDto password) throws ValidationException {
+        userService.changePassword(password);
+        return JsonResponse.builder().data(null)
+                .status(JsonResponse.STATUS.SUCCESS).build();
+    }
+
 
 }

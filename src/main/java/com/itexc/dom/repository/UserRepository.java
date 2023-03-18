@@ -1,5 +1,6 @@
 package com.itexc.dom.repository;
 
+import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,4 +17,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
      boolean existsByEmailAddressIgnoreCase(String emailAddress);
 
      Page<User> findAll(Pageable pageable);
+
+     boolean existsByProfile(Profile profile);
+
 }

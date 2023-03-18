@@ -1,11 +1,11 @@
 package com.itexc.dom.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Data
 @EqualsAndHashCode()

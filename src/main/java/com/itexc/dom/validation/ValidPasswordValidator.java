@@ -1,8 +1,8 @@
 package com.itexc.dom.validation;
 
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 public class ValidPasswordValidator implements ConstraintValidator<ValidPassword, String> {
 

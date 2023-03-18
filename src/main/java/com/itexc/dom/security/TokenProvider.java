@@ -6,7 +6,7 @@ import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.utils.ParamsProvider;
 import io.jsonwebtoken.security.SignatureException;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,6 +93,19 @@ public class TokenProvider implements Serializable {
         return jwtBuilder.compact();
 
     }
+
+    public String getIdFromExpiredToken(String expiredToken) throws ValidationException {
+        String id;
+        try {
+            getIdFromToken(expiredToken);
+            //If token not expired (valid) throw exception TOKEN_ALREADY_VALID
+            throw new ValidationException(ERROR_CODE.TOKEN_ALREADY_VALID);
+        } catch (ExpiredJwtException e) {
+            id = e.getClaims().getId();
+        }
+        return id;
+    }
+
 
     public String getTokenFromRequest(HttpServletRequest req) throws ValidationException {
         String auth = req.getHeader(paramsProvider.getAuthorizationHeader());
