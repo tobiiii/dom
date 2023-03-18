@@ -14,9 +14,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class AppointmentView {
 
-    private Doctor doctor;
+    private Long id;
+    private DoctorView doctor;
 
-    private Patient patient;
+    private PatientView patient;
 
     private Date dateAndTime;
 
@@ -25,8 +26,9 @@ public class AppointmentView {
     private String status;
 
     public AppointmentView(Appointment appointment) {
-        this.doctor = appointment.getDoctor();
-        this.patient = appointment.getPatient();
+        this.id = appointment.getId();
+        this.doctor = new DoctorView(appointment.getDoctor());
+        this.patient = new PatientView(appointment.getPatient());
         this.dateAndTime = appointment.getDateAndTime();
         this.reason = appointment.getReason();
         this.status = appointment.getStatus();

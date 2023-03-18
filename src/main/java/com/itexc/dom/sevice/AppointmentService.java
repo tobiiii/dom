@@ -10,7 +10,7 @@ public interface AppointmentService {
 
     AppointmentView create(AppointmentDto appointment) throws Throwable;
 
-    Appointment update(Long appointmentId, AppointmentDto appointment) throws Throwable;
+    AppointmentView update(Long appointmentId, AppointmentDto appointment) throws Throwable;
 
     List<AppointmentView> findAll();
 

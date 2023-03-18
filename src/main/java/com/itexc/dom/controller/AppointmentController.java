@@ -61,17 +61,17 @@ public class AppointmentController {
     }
 
     @PreAuthorize("hasAuthority('appointment.update')")
-    @PutMapping(value = "/update/{appointmentId}")
+    @PostMapping(value = "/update/{appointmentId}")
     public JsonResponse update(
             @NotNull  @PathVariable Long appointmentId,
             @Valid @RequestBody AppointmentDto appointment) throws Throwable {
-        Appointment updatedAppointment = appointmentService.update(appointmentId, appointment);
-        return new JsonResponse(new AppointmentView(updatedAppointment));
+        AppointmentView updatedAppointment = appointmentService.update(appointmentId, appointment);
+        return new JsonResponse(updatedAppointment);
     }
 
 
     @PreAuthorize("hasAuthority('appointment.cancel')")
-    @DeleteMapping(value = "/cancel/{appointmentId}")
+    @PostMapping(value = "/cancel/{appointmentId}")
     public JsonResponse cancel(
             @NotNull  @PathVariable Long appointmentId) throws Throwable {
         appointmentService.cancel(appointmentId);
@@ -79,7 +79,7 @@ public class AppointmentController {
     }
 
     @PreAuthorize("hasAuthority('appointment.end')")
-    @DeleteMapping(value = "/end/{appointmentId}")
+    @PostMapping(value = "/end/{appointmentId}")
     public JsonResponse end(
             @NotNull  @PathVariable Long appointmentId) throws Throwable {
         appointmentService.end(appointmentId);
