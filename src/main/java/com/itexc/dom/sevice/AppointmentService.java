@@ -2,6 +2,7 @@ package com.itexc.dom.sevice;
 
 import com.itexc.dom.domain.Appointment;
 import com.itexc.dom.domain.DTO.AppointmentDto;
+import com.itexc.dom.domain.Patient;
 import com.itexc.dom.domain.projection.AppointmentView;
 
 import java.util.List;
@@ -13,6 +14,8 @@ public interface AppointmentService {
     Appointment update(Long appointmentId, AppointmentDto appointment) throws Throwable;
 
     List<AppointmentView> findAll();
+
+    List<AppointmentView> findAllByPatient(Long patientId) throws Throwable;
 
     AppointmentView getDetails(Long id) throws Throwable;
 

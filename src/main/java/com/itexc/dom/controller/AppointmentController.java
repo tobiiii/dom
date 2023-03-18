@@ -27,11 +27,20 @@ public class AppointmentController {
             "'appointment.add'," +
             "'appointment.update'," +
             "'appointment.detail'," +
-            "'appointment.delete')")
+            "'appointment.end'," +
+            "'appointment.cancel')")
     @GetMapping(value = "/find_all")
     public JsonResponse findAll() {
         List<AppointmentView> appointment = appointmentService.findAll();
         return JsonResponse.builder().data(appointment).status(JsonResponse.STATUS.SUCCESS).build();
+    }
+
+    @PreAuthorize("hasAuthority('appointment.list_by_patient')")
+    @GetMapping(value = "/find_all_by_patient/{patientId}")
+    public JsonResponse findAllByPatient(
+            @NotNull @PathVariable Long patientId) throws Throwable {
+        List<AppointmentView> appointments = appointmentService.findAllByPatient(patientId);
+        return JsonResponse.builder().data(appointments).status(JsonResponse.STATUS.SUCCESS).build();
     }
 
     @PreAuthorize("hasAuthority('appointment.add')")

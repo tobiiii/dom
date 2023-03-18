@@ -7,6 +7,7 @@ import com.itexc.dom.domain.Patient;
 import com.itexc.dom.domain.enums.AppointmentStatusE;
 import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.projection.AppointmentView;
+import com.itexc.dom.domain.projection.PrivilegeView;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.AppointmentRepository;
 import com.itexc.dom.sevice.AppointmentService;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
@@ -53,6 +55,13 @@ public class AppointmentServiceImpl implements AppointmentService {
     @Override
     public List<AppointmentView> findAll() {
         return appointmentRepository.findAllOrderByIdDesc();
+    }
+
+    @Override
+    public List<AppointmentView> findAllByPatient(Long patientId) throws Throwable {
+        Patient patient =  patientService.findById(patientId);
+        List<Appointment> app = appointmentRepository.findAllByPatient(patient);
+        return app.stream().map(AppointmentView::new).collect(Collectors.toList());
     }
 
     @Override
