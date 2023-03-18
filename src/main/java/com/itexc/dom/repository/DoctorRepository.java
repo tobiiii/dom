@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface DoctorRepository<T extends Doctor> extends JpaRepository<T, Long> {
 
-    @Query("select p from Doctor p ORDER BY p.id ASC ")
+    @Query("select d from Doctor d ORDER BY d.id ASC ")
     List<DoctorView> findAllOrderByIdDesc ();
 
 }

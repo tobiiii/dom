@@ -15,7 +15,7 @@ public class PatientView {
 
 
     private Long id;
-    private User user;
+    private UserView user;
     private Date created;
     private Date updated;
     private String defaultPass;
@@ -25,7 +25,7 @@ public class PatientView {
 
     public PatientView(Patient patient) {
         this.id = patient.getId();
-        this.user = patient.getUser();
+        this.user = new UserView(patient.getUser());
         this.created = patient.getCreated();
         this.updated = patient.getUpdated();
         this.address = patient.getAddress();
