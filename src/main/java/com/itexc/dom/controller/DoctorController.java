@@ -46,7 +46,7 @@ public class DoctorController {
             "'doctor.update')")
     @GetMapping(value = "/detail/{doctorId}")
     public JsonResponse detail(
-            @NotNull(message = "Profil {REQUIRED}") @PathVariable Long doctorId) throws Throwable {
+            @NotNull  @PathVariable Long doctorId) throws Throwable {
         DoctorView doctor = doctorService.getDetails(doctorId);
         return new JsonResponse(doctor);
     }
@@ -54,7 +54,7 @@ public class DoctorController {
     @PreAuthorize("hasAuthority('doctor.update')")
     @PutMapping(value = "/update/{doctorId}")
     public JsonResponse update(
-            @NotNull(message = "Profil {REQUIRED}") @PathVariable Long doctorId,
+            @NotNull  @PathVariable Long doctorId,
             @Valid @RequestBody DoctorDto doctor) throws Throwable {
         Doctor updatedDctor = doctorService.update(doctorId, doctor);
         return new JsonResponse(new DoctorView(updatedDctor));
@@ -64,7 +64,7 @@ public class DoctorController {
     @PreAuthorize("hasAuthority('doctor.delete')")
     @DeleteMapping(value = "/delete/{doctorId}")
     public JsonResponse remove(
-            @NotNull(message = "Profil {REQUIRED}") @PathVariable Long doctorId) throws Throwable {
+            @NotNull  @PathVariable Long doctorId) throws Throwable {
         doctorService.delete(doctorId);
         return JsonResponse.builder().status(JsonResponse.STATUS.SUCCESS).build();
     }
