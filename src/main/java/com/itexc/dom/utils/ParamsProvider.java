@@ -39,5 +39,13 @@ public class ParamsProvider {
     @Value("${APP_BUILD_INFO:}")
     private String appBuildInfo;
 
+    @Value("${populate.init:true}")
+    private Boolean populateInit;
+
+    @Value("${populate.overwrite:false}")
+    private Boolean populateOverwrite;
+
+
+
 
 }
