@@ -6,7 +6,7 @@ import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.utils.ParamsProvider;
 import io.jsonwebtoken.security.SignatureException;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

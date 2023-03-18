@@ -9,7 +9,7 @@ import com.itexc.dom.repository.DBSessionRepository;
 import com.itexc.dom.security.TokenProvider;
 import com.itexc.dom.sevice.DBSessionService;
 import com.itexc.dom.sevice.UserService;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

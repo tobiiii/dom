@@ -2,8 +2,8 @@ package com.itexc.dom.domain.DTO;
 
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.projection.PrivilegeView;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

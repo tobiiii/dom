@@ -4,7 +4,7 @@ import com.itexc.dom.domain.DBSession;
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
 import com.itexc.dom.exceptions.ValidationException;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 import java.util.Optional;
 

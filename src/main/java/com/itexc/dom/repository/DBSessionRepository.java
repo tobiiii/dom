@@ -2,7 +2,7 @@ package com.itexc.dom.repository;
 
 import com.itexc.dom.domain.DBSession;
 import com.itexc.dom.domain.Profile;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

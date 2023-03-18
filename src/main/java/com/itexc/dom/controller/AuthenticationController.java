@@ -6,13 +6,13 @@ import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.sevice.DBSessionService;
 import com.itexc.dom.sevice.UserService;
 import com.itexc.dom.utils.JsonResponse;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 

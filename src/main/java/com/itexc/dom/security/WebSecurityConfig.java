@@ -1,5 +1,6 @@
 package com.itexc.dom.security;
 
+import com.itexc.dom.domain.enums.ProfileCodeE;
 import com.itexc.dom.service_impl.UserDetailsServiceImpl;
 import com.itexc.dom.utils.ParamsProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,8 +68,11 @@ public class WebSecurityConfig {
                 "/swagger-ui/**",
                 "/v2/api-docs/**",
                 "/swagger-resources/**",
+                "/api/auth/**"
+                ,
         };
-        http.cors().configurationSource(request -> corsConfiguration)
+        http
+                .cors().configurationSource(request -> corsConfiguration)
                 .and()
                 .exceptionHandling()
                 .authenticationEntryPoint(unauthorizedHandler)
@@ -76,8 +80,8 @@ public class WebSecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .requestMatchers(HttpMethod.OPTIONS).permitAll()
-                .requestMatchers(WHITE_LIST).permitAll()
+                .antMatchers(WHITE_LIST).permitAll()
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic();
 

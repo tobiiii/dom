@@ -1,7 +1,7 @@
 package com.itexc.dom.domain;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 

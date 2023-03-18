@@ -14,10 +14,9 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApiConfig {
 
     @Bean
-    public OpenAPI customOpenAPI(OpenApiProperties properties) {
+    public OpenAPI customOpenAPI() {
         final String securitySchemeName = "Authorization";
         return new OpenAPI()
-                .info(getInfo(properties))
                 .addSecurityItem(new SecurityRequirement()
                         .addList(securitySchemeName))
                 .components(new Components()
@@ -29,24 +28,4 @@ public class OpenApiConfig {
                                 .bearerFormat("JWT")));
     }
 
-    private Info getInfo(OpenApiProperties properties) {
-        return new Info()
-                .title(properties.getProjectTitle())
-                .description(properties.getProjectDescription())
-                .version(properties.getProjectVersion())
-                .contact(getContact())
-                .license(getLicense());
-    }
-
-    private Contact getContact() {
-        return new Contact().name("ITEXC")
-                .email("l.nadir.belhadj@gmail.com")
-                .url("http://itexc-agency.com");
-    }
-
-    private License getLicense() {
-        return new License()
-                .name("Licence ITEXC")
-                .url("http://itexc-agency.com");
-    }
 }

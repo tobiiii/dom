@@ -1,7 +1,7 @@
 package com.itexc.dom.domain.DTO;
 
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotBlank;
+import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
