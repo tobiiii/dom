@@ -26,4 +26,5 @@ public class AppointmentDto {
     @NotBlank
     private String reason;
 
+
 }

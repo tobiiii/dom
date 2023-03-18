@@ -42,6 +42,10 @@ public class Appointment extends  CommonEntity{
     @Column(nullable = false)
     private String reason;
 
+    @NotBlank
+    @Column(nullable = false)
+    private String status;
+
 
 
 }
