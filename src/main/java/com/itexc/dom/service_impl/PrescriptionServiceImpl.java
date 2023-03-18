@@ -82,8 +82,8 @@ public class PrescriptionServiceImpl implements PrescriptionService {
     }
 
     @Override
-    public Prescription findById(Long PrescriptionId) throws Throwable {
-        return (Prescription) prescriptionRepository.findById(PrescriptionId)
+    public Prescription findById(Long prescriptionId) throws Throwable {
+        return (Prescription) prescriptionRepository.findById(prescriptionId)
                 .orElseThrow(() -> new ValidationException(ERROR_CODE.INEXISTANT_PRESCRIPTION));
 
     }

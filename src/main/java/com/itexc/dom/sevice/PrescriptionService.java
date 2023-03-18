@@ -20,5 +20,5 @@ public interface PrescriptionService {
 
     void delete(Long prescriptionId) throws Throwable;
 
-    Prescription findById(Long PrescriptionId) throws Throwable;
+    Prescription findById(Long prescriptionId) throws Throwable;
 }
