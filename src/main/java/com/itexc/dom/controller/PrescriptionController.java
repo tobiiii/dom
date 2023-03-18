@@ -70,7 +70,7 @@ public class PrescriptionController {
 
 
     @PreAuthorize("hasAuthority('prescription.delete')")
-    @DeleteMapping(value = "/cancel/{prescriptionId}")
+    @DeleteMapping(value = "/delete/{prescriptionId}")
     public JsonResponse remove(
             @NotNull  @PathVariable Long prescriptionId) throws Throwable {
         prescriptionService.delete(prescriptionId);

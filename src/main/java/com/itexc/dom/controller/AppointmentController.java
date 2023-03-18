@@ -1,6 +1,5 @@
 package com.itexc.dom.controller;
 
-import com.itexc.dom.domain.Appointment;
 import com.itexc.dom.domain.DTO.AppointmentDto;
 import com.itexc.dom.domain.projection.AppointmentView;
 import com.itexc.dom.sevice.AppointmentService;
