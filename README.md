@@ -18,7 +18,7 @@ git clone https://github.com/tobiiii/dom.git
 ```shell
 mvn clean install
 ```
-3. Go to /target inside TicTacToe and run the following command to lunch the application:
+3. Go to /target inside DOM and run the following command to lunch the application:
 ```shell
 java -jar dom-0.0.1-SNAPSHOT.jar
 ```
