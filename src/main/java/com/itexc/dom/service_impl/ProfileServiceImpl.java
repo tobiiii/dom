@@ -64,13 +64,9 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public ProfileDto getDetailsProfile(Long id) throws Throwable {
+    public ProfileView getDetailsProfile(Long id) throws Throwable {
         Profile profile = findById(id);
-        ProfileDto profileDTO = new ProfileDto(profile);
-        List<PrivilegeView> privileges = privilegeService.fromPrivilegesListToPrivilegesViewList(
-                profile.getPrivileges());
-        profileDTO.setPrivileges(privileges);
-        return profileDTO;
+        return new ProfileView(profile);
     }
 
     public  Profile create(ProfileDto profile) throws Throwable {
@@ -78,17 +74,18 @@ public class ProfileServiceImpl implements ProfileService {
         Profile createdProfile = new Profile();
         createdProfile.setCode(profile.getCode());
         createdProfile.setName(profile.getName());
+        createdProfile.setPrivileges(privilegeService.getPrivilegesFromIdList(profile.getPrivileges()));
+        profileRepository.save(createdProfile);
         return createdProfile;
     }
 
     public  Profile update(Long profileId, ProfileDto profile) throws Throwable {
         Profile updatedProfile = findById(profileId);
-        if (isPrivilegesListChanged(profile.getPrivileges().stream().map(PrivilegeView::getId).collect(Collectors.toList()), updatedProfile.getPrivileges())) {
-            dbSessionService.disconnectByProfile(updatedProfile);
-        }
         checkProfile(profile);
         updatedProfile.setCode(profile.getCode());
         updatedProfile.setName(profile.getName());
+        updatedProfile.setPrivileges(privilegeService.getPrivilegesFromIdList(profile.getPrivileges()));
+        profileRepository.save(updatedProfile);
         return updatedProfile;
     }
 

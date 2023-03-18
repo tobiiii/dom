@@ -1,11 +1,15 @@
 package com.itexc.dom.domain.projection;
 
+import com.itexc.dom.domain.Privilege;
 import com.itexc.dom.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
@@ -20,6 +24,9 @@ public class ProfileView {
 
     private Date created;
     private Date updated;
+    @Size(min = 1, message = "Privilèges {REQUIRED}")
+    private List<PrivilegeView> privileges;
+
 
 
     public ProfileView(Profile profile) {
@@ -28,6 +35,7 @@ public class ProfileView {
         this.name = profile.getName();
         this.created = profile.getCreated();
         this.updated = profile.getUpdated();
+        this.privileges = profile.getPrivileges().stream().map(PrivilegeView::new).collect(Collectors.toList());
     }
 
 }

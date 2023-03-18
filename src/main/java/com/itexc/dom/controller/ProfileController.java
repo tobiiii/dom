@@ -52,7 +52,7 @@ public class ProfileController {
     @GetMapping(value = "/detail/{profileId}")
     public JsonResponse detail(
             @NotNull(message = "Profil {REQUIRED}") @PathVariable Long profileId) throws Throwable {
-        ProfileDto profile = profileService.getDetailsProfile(profileId);
+        ProfileView profile = profileService.getDetailsProfile(profileId);
         return new JsonResponse(profile);
     }
 

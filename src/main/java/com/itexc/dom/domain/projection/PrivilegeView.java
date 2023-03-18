@@ -33,7 +33,6 @@ public class PrivilegeView {
         this.code = privilege.getCode();
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

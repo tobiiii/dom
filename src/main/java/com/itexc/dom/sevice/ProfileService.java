@@ -15,7 +15,7 @@ public interface ProfileService {
 
     List<ProfileView> findAllProfiles();
 
-    ProfileDto getDetailsProfile(Long id) throws Throwable;
+    ProfileView getDetailsProfile(Long id) throws Throwable;
 
     void deleteProfile(Long profile) throws Throwable;
 

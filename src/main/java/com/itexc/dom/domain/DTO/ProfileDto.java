@@ -18,32 +18,23 @@ import java.util.List;
 @NoArgsConstructor
 public class ProfileDto {
 
-    @NotNull(message = "Identifiant {REQUIRED}")
-    private Long id;
 
-    @NotNull(message = "Code {REQUIRED}")
-    @NotBlank(message = "Code {REQUIRED}")
-    @NotEmpty(message = "Code {REQUIRED}")
+    @NotNull
+    @NotBlank
+    @NotEmpty
     private String code;
 
-    @NotNull(message = "Nom {REQUIRED}")
-    @NotBlank(message = "Nom {REQUIRED}")
-    @NotEmpty(message = "Nom {REQUIRED}")
+    @NotNull
+    @NotBlank
+    @NotEmpty
     private String name;
 
-    private Date created;
-    private Date updated;
-
-    @NotNull(message = "Privilèges {REQUIRED}")
-    @Size(min = 1, message = "Privilèges {REQUIRED}")
-    private List<PrivilegeView> privileges;
-
+    @NotNull
+    @Size(min = 1)
+    private List<Long> privileges;
 
     public ProfileDto(Profile profile) {
-        this.id = profile.getId();
         this.code = profile.getCode();
         this.name = profile.getName();
-        this.created = profile.getCreated();
-        this.updated = profile.getUpdated();
     }
 }
