@@ -3,12 +3,13 @@ package com.itexc.dom.controller;
 import com.itexc.dom.domain.DTO.ChangePasswordDto;
 import com.itexc.dom.domain.DTO.UserDto;
 import com.itexc.dom.domain.User;
-import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.sevice.UserService;
+import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.utils.JsonResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

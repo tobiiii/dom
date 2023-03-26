@@ -1,7 +1,8 @@
 package com.itexc.dom.controller;
 
-import com.itexc.dom.domain.DTO.AppointmentDto;
 import com.itexc.dom.domain.projection.AppointmentView;
+import com.itexc.dom.domain.DTO.AppointmentDto;
+import com.itexc.dom.domain.projection.DocDayView;
 import com.itexc.dom.sevice.AppointmentService;
 import com.itexc.dom.utils.JsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,6 +84,14 @@ public class AppointmentController {
             @NotNull  @PathVariable Long appointmentId) throws Throwable {
         appointmentService.end(appointmentId);
         return JsonResponse.builder().status(JsonResponse.STATUS.SUCCESS).build();
+    }
+
+    @PreAuthorize("hasAuthority('appointment.end')")
+    @GetMapping(value = "/schedule/{docId}")
+    public JsonResponse getDocSchedule(
+            @NotNull  @PathVariable Long docId) throws Throwable {
+        List<DocDayView> docSchedule = appointmentService.getDocSchedule(docId);
+        return JsonResponse.builder().data(docSchedule).status(JsonResponse.STATUS.SUCCESS).build();
     }
 
 }

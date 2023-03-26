@@ -1,19 +1,18 @@
 package com.itexc.dom.service_impl;
 
 import com.itexc.dom.domain.CommonEntity;
-
 import com.itexc.dom.domain.DTO.ProfileDto;
 import com.itexc.dom.domain.Privilege;
 import com.itexc.dom.domain.Profile;
-import com.itexc.dom.domain.enums.ERROR_CODE;
-import com.itexc.dom.domain.projection.PrivilegeView;
-import com.itexc.dom.domain.projection.ProfileView;
 import com.itexc.dom.exceptions.ValidationException;
-import com.itexc.dom.repository.ProfileRepository;
 import com.itexc.dom.sevice.DBSessionService;
+import com.itexc.dom.sevice.UserService;
+
+import com.itexc.dom.domain.enums.ERROR_CODE;
+import com.itexc.dom.domain.projection.ProfileView;
+import com.itexc.dom.repository.ProfileRepository;
 import com.itexc.dom.sevice.PrivilegeService;
 import com.itexc.dom.sevice.ProfileService;
-import com.itexc.dom.sevice.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

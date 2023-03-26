@@ -1,7 +1,7 @@
 package com.itexc.dom.controller;
 
-import com.itexc.dom.domain.DTO.MedicalHistoryDto;
 import com.itexc.dom.domain.MedicalHistory;
+import com.itexc.dom.domain.DTO.MedicalHistoryDto;
 import com.itexc.dom.domain.projection.MedicalHistoryView;
 import com.itexc.dom.sevice.MedicalHistoryService;
 import com.itexc.dom.utils.JsonResponse;

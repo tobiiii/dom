@@ -1,16 +1,16 @@
 package com.itexc.dom.service_impl;
 
-import com.itexc.dom.domain.DTO.DoctorDto;
 import com.itexc.dom.domain.DTO.UserDto;
-import com.itexc.dom.domain.Doctor;
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
-import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.enums.ProfileCodeE;
 import com.itexc.dom.domain.projection.DoctorView;
-import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.DoctorRepository;
+import com.itexc.dom.domain.DTO.DoctorDto;
+import com.itexc.dom.domain.Doctor;
+import com.itexc.dom.domain.enums.ERROR_CODE;
+import com.itexc.dom.domain.projection.UserView;
 import com.itexc.dom.sevice.DoctorService;
 import com.itexc.dom.sevice.ProfileService;
 import com.itexc.dom.sevice.UserService;

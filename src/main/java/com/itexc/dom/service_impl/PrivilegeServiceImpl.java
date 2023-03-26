@@ -1,11 +1,11 @@
 package com.itexc.dom.service_impl;
 
 import com.itexc.dom.domain.Privilege;
+import com.itexc.dom.exceptions.ValidationException;
+import com.itexc.dom.sevice.PrivilegeService;
 import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.projection.PrivilegeView;
-import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.PrivilegeRepository;
-import com.itexc.dom.sevice.PrivilegeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

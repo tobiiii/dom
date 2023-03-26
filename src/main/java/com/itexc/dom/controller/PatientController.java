@@ -2,8 +2,8 @@ package com.itexc.dom.controller;
 
 import com.itexc.dom.domain.DTO.PatientDto;
 import com.itexc.dom.domain.Patient;
-import com.itexc.dom.domain.projection.PatientView;
 import com.itexc.dom.sevice.PatientService;
+import com.itexc.dom.domain.projection.PatientView;
 import com.itexc.dom.utils.JsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

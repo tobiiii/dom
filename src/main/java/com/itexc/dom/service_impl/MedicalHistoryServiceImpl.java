@@ -1,16 +1,16 @@
 package com.itexc.dom.service_impl;
 
 import com.itexc.dom.domain.DTO.MedicalHistoryDto;
-import com.itexc.dom.domain.Doctor;
 import com.itexc.dom.domain.MedicalHistory;
 import com.itexc.dom.domain.Patient;
-import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.projection.MedicalHistoryView;
 import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.MedicalHistoryRepository;
 import com.itexc.dom.sevice.DoctorService;
 import com.itexc.dom.sevice.MedicalHistoryService;
 import com.itexc.dom.sevice.PatientService;
+import com.itexc.dom.domain.Doctor;
+import com.itexc.dom.domain.enums.ERROR_CODE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

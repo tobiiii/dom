@@ -1,6 +1,5 @@
 package com.itexc.dom.domain.projection;
 
-import com.itexc.dom.domain.Privilege;
 import com.itexc.dom.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.Data;

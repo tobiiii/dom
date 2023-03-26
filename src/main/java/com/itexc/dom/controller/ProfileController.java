@@ -1,7 +1,7 @@
 package com.itexc.dom.controller;
 
-import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.DTO.ProfileDto;
+import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.projection.ProfileView;
 import com.itexc.dom.sevice.ProfileService;
 import com.itexc.dom.utils.JsonResponse;

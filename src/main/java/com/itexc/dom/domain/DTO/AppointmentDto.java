@@ -20,8 +20,11 @@ public class AppointmentDto {
     @NotNull(message = "patient ... ")
     private Long patient;
 
+    @NotNull(message = "session ... ")
+    private Long session;
+
     @DateTimeFormat
-    private Date dateAndTime;
+    private Date date;
 
     @NotBlank
     private String reason;

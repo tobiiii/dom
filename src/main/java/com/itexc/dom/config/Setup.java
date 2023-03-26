@@ -1,12 +1,15 @@
 package com.itexc.dom.config;
 
-import com.itexc.dom.domain.*;
 import com.itexc.dom.repository.PrivilegeRepository;
 import com.itexc.dom.repository.ProfileRepository;
 import com.itexc.dom.repository.SecurityCustomizationRepository;
 import com.itexc.dom.repository.UserRepository;
 import com.itexc.dom.utils.CSVHelper;
 import com.itexc.dom.utils.ParamsProvider;
+import com.itexc.dom.domain.Password;
+import com.itexc.dom.domain.Privilege;
+import com.itexc.dom.domain.Profile;
+import com.itexc.dom.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;

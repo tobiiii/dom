@@ -3,13 +3,14 @@ package com.itexc.dom.service_impl;
 import com.itexc.dom.domain.DBSession;
 import com.itexc.dom.domain.Profile;
 import com.itexc.dom.domain.User;
-import com.itexc.dom.domain.enums.ERROR_CODE;
-import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.repository.DBSessionRepository;
 import com.itexc.dom.security.TokenProvider;
+import com.itexc.dom.domain.enums.ERROR_CODE;
+import com.itexc.dom.exceptions.ValidationException;
 import com.itexc.dom.sevice.DBSessionService;
 import com.itexc.dom.sevice.UserService;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

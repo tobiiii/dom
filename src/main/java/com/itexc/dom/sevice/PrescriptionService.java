@@ -1,7 +1,7 @@
 package com.itexc.dom.sevice;
 
-import com.itexc.dom.domain.Prescription;
 import com.itexc.dom.domain.DTO.PrescriptionDto;
+import com.itexc.dom.domain.Prescription;
 import com.itexc.dom.domain.projection.PrescriptionView;
 
 import java.util.List;

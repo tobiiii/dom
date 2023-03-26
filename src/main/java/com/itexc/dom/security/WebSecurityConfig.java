@@ -1,6 +1,5 @@
 package com.itexc.dom.security;
 
-import com.itexc.dom.domain.enums.ProfileCodeE;
 import com.itexc.dom.service_impl.UserDetailsServiceImpl;
 import com.itexc.dom.utils.ParamsProvider;
 import org.springframework.beans.factory.annotation.Autowired;

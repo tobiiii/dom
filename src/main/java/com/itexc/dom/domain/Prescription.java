@@ -1,8 +1,5 @@
 package com.itexc.dom.domain;
 
-import com.itexc.dom.domain.CommonEntity;
-import com.itexc.dom.domain.Doctor;
-import com.itexc.dom.domain.Patient;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

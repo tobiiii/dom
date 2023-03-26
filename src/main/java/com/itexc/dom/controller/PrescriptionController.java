@@ -1,8 +1,8 @@
 package com.itexc.dom.controller;
 
 import com.itexc.dom.domain.Prescription;
-import com.itexc.dom.domain.DTO.PrescriptionDto;
 import com.itexc.dom.domain.projection.PrescriptionView;
+import com.itexc.dom.domain.DTO.PrescriptionDto;
 import com.itexc.dom.sevice.PrescriptionService;
 import com.itexc.dom.utils.JsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 package com.itexc.dom.sevice;
 
+import com.itexc.dom.domain.projection.DoctorView;
 import com.itexc.dom.domain.DTO.DoctorDto;
 import com.itexc.dom.domain.Doctor;
-import com.itexc.dom.domain.projection.DoctorView;
 
 import java.util.List;
 

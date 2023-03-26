@@ -34,9 +34,18 @@ public class Appointment extends  CommonEntity{
             foreignKey = @ForeignKey(name = "fk_appointment_patient"))
     private Patient patient;
 
-    @DateTimeFormat
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(
+            name = "session_id",
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "fk_appointment_session"))
+    private DocSession session;
+
+
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false)
-    private Date dateAndTime;
+    private Date date;
 
     @NotBlank
     @Column(nullable = false)
@@ -45,7 +54,5 @@ public class Appointment extends  CommonEntity{
     @NotBlank
     @Column(nullable = false)
     private String status;
-
-
 
 }

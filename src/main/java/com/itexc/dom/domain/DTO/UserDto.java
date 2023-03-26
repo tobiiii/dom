@@ -1,6 +1,5 @@
 package com.itexc.dom.domain.DTO;
 
-import com.itexc.dom.domain.User;
 import com.itexc.dom.validation.ValidEmail;
 import com.itexc.dom.validation.ValidName;
 import lombok.AllArgsConstructor;

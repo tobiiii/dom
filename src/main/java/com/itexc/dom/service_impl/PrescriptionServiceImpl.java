@@ -1,13 +1,13 @@
 package com.itexc.dom.service_impl;
 
-import com.itexc.dom.domain.DTO.PrescriptionDto;
-import com.itexc.dom.domain.Doctor;
 import com.itexc.dom.domain.Patient;
 import com.itexc.dom.domain.Prescription;
+import com.itexc.dom.repository.PrescriptionRepository;
+import com.itexc.dom.domain.DTO.PrescriptionDto;
+import com.itexc.dom.domain.Doctor;
 import com.itexc.dom.domain.enums.ERROR_CODE;
 import com.itexc.dom.domain.projection.PrescriptionView;
 import com.itexc.dom.exceptions.ValidationException;
-import com.itexc.dom.repository.PrescriptionRepository;
 import com.itexc.dom.sevice.DoctorService;
 import com.itexc.dom.sevice.PatientService;
 import com.itexc.dom.sevice.PrescriptionService;

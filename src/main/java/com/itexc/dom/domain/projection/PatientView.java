@@ -1,7 +1,6 @@
 package com.itexc.dom.domain.projection;
 
 import com.itexc.dom.domain.Patient;
-import com.itexc.dom.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
