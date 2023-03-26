@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DocDayView {
+public class DoctorDay {
     private Date date;
-    private List<DocSessionView> sessions;
+    private List<DoctorSessionView> sessions;
 }

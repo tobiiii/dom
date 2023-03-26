@@ -19,7 +19,7 @@ public class AppointmentView {
 
     private Date date;
 
-    private DocSessionView session;
+    private DoctorSessionView session;
 
     private String reason;
 
@@ -32,6 +32,6 @@ public class AppointmentView {
         this.date = appointment.getDate();
         this.reason = appointment.getReason();
         this.status = appointment.getStatus();
-        this.session = new DocSessionView(appointment.getSession(),true);
+        this.session = new DoctorSessionView(appointment.getSession(),true);
     }
 }

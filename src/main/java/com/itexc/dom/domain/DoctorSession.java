@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode(callSuper = true)
-public class DocSession extends CommonEntity{
+public class DoctorSession extends CommonEntity{
 
     @NotBlank
     @Column(nullable = false)

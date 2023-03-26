@@ -2,7 +2,7 @@ package com.itexc.dom.sevice;
 
 import com.itexc.dom.domain.Appointment;
 import com.itexc.dom.domain.projection.AppointmentView;
-import com.itexc.dom.domain.projection.DocDayView;
+import com.itexc.dom.domain.projection.DoctorDay;
 import com.itexc.dom.domain.DTO.AppointmentDto;
 
 import java.util.List;
@@ -25,6 +25,6 @@ public interface AppointmentService {
 
     Appointment findById(Long appointmentId) throws Throwable;
 
-    List<DocDayView> getDocSchedule(long doc) throws Throwable;
+    List<DoctorDay> getDocSchedule(long doc) throws Throwable;
 
 }

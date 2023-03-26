@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -40,7 +39,7 @@ public class Appointment extends  CommonEntity{
             name = "session_id",
             referencedColumnName = "id",
             foreignKey = @ForeignKey(name = "fk_appointment_session"))
-    private DocSession session;
+    private DoctorSession session;
 
 
     @Temporal(TemporalType.DATE)

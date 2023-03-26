@@ -1,6 +1,6 @@
 package com.itexc.dom.domain.projection;
 
-import com.itexc.dom.domain.DocSession;
+import com.itexc.dom.domain.DoctorSession;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DocSessionView {
+public class DoctorSessionView {
 
     private String code;
     private String start;
     private String end;
     private boolean reserved;
 
-    public DocSessionView(DocSession session , boolean reserved) {
+    public DoctorSessionView(DoctorSession session , boolean reserved) {
         this.code = session.getCode();
         this.start = session.getStart();
         this.end = session.getEndTime();
