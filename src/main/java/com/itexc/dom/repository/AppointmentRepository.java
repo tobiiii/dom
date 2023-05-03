@@ -23,8 +23,8 @@ public interface AppointmentRepository <T extends Appointment> extends JpaReposi
     @Query("select a from Appointment a where a.patient = :patient")
     List<T> findAllByPatient(Patient patient);
 
-    Optional<T> findBySessionAndDateAndDoctor(DoctorSession session, Date date, Doctor doctor);
 
     Optional<T> findFirstByOrderByDateDesc();
 
+    boolean existsBySessionAndDateAndDoctor(DoctorSession session, Date date, Doctor doctor);
 }

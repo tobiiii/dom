@@ -42,7 +42,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         Doctor doctor = doctorService.findById(appointment.getDoctor());
         Patient patient = patientService.findById(appointment.getPatient());
         DoctorSession session = docSessionRepository.findById(appointment.getSession()).orElse(null);
-        if (isSessionReserved(session,appointment.getDate(),doctor)) throw new ValidationException(ERROR_CODE.INVALID_SESSION);
+        if (appointmentRepository.existsBySessionAndDateAndDoctor(session,appointment.getDate(),doctor)) throw new ValidationException(ERROR_CODE.INVALID_SESSION);
         newAppointment.setDoctor(doctor);
         newAppointment.setPatient(patient);
         newAppointment.setSession(session);
@@ -114,15 +114,10 @@ public class AppointmentServiceImpl implements AppointmentService {
     private List<DoctorSessionView> sessionsListByDayAndDoc(Date date, Doctor doctor) {
         List<DoctorSession> sessions = docSessionRepository.findAll();
         return sessions.stream()
-                .map(session -> new DoctorSessionView(session, isSessionReserved(session, date, doctor)))
+                .map(session -> new DoctorSessionView(session, appointmentRepository.existsBySessionAndDateAndDoctor(session, date, doctor)))
                 .toList();
     }
 
-    public boolean isSessionReserved(DoctorSession session, Date date, Doctor doctor) {
-        Appointment appointment = appointmentRepository.findBySessionAndDateAndDoctor(session, date, doctor)
-                .orElse(null);
-        return appointment != null;
-    }
 
     public static List<Date> getDaysBetweenDates(Date startDate, Date endDate) {
         List<Date> dates = new ArrayList<>();
