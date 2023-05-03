@@ -1,0 +1,1476 @@
+{
+	"info": {
+		"_postman_id": "af622bc5-6a3f-4b2d-af8a-dcaa277a469b",
+		"name": "DOM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22930698"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxNTdiMDRiYS05YTcyLTQ1MjgtODZjMi1iYmVmZGE5MGJmZTgiLCJzdWIiOiJhYmRvdUB0ZXN0LmNvbSIsInJvbGVzIjoidXNlci5saXN0IiwiaWF0IjoxNjc5MTM2MDcwLCJleHAiOjE2NzkxMzc4NzB9.VkBbyk_UJY8tSdj7T-FRnuds4AAMOFJQAGxQqASM76w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/user/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwMmIyZWJmMC0zNTZlLTRlYzctYjFhZi00ODliMTkxZDViOGQiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE1NjgxNSwiZXhwIjoxNjc5MTU4NjE1fQ.oSlwqlkSOsGA5rfbyTR4HMHz6tPGvCbfrGWWiCJ0xUU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailAddress\": \"abdou@test.com\",\n    \"firstName\": \"abdelwakil\",\n    \"lastName\": \"rabidi\",\n    \"profile\": \"1\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user/add\n",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"add\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailAddress\": \"abdou@test.com\",\n    \"firstName\": \"abdelwakil\",\n    \"lastName\": \"rabidii\",\n    \"profile\": \"1\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user/update/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/user/detail/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"detail",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change_password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiYmVmYzZjMi05MzMwLTQxNTEtYTFlMi03NDcyNjk0OGE0NTIiLCJzdWIiOiJhYmRvdUB0ZXN0LmNvbSIsInJvbGVzIjoicHJvZmlsZS5hZGQscHJvZmlsZS5kZWxldGUscHJvZmlsZS5kZXRhaWwscHJvZmlsZS51cGRhdGUscHJvZmlsZS5saXN0LHVzZXIuYWRkLHVzZXIuZGVsZXRlLHVzZXIuZGV0YWlsLHVzZXIudXBkYXRlLHVzZXIubGlzdCxkb2N0b3IuYWRkLGRvY3Rvci5kZWxldGUsZG9jdG9yLmRldGFpbCxkb2N0b3IudXBkYXRlLGRvY3Rvci5saXN0LHBhdGllbnQuYWRkLHBhdGllbnQuZGVsZXRlLHBhdGllbnQuZGV0YWlsLHBhdGllbnQudXBkYXRlLHBhdGllbnQubGlzdCxhcHBvaW50bWVudC5hZGQsYXBwb2ludG1lbnQuY2FuY2VsLGFwcG9pbnRtZW50LmVuZCxhcHBvaW50bWVudC5kZXRhaWwsYXBwb2ludG1lbnQudXBkYXRlLGFwcG9pbnRtZW50Lmxpc3QsYXBwb2ludG1lbnQubGlzdF9ieV9wYXRpZW50LHByZXNjcmlwdGlvbi5hZGQscHJlc2NyaXB0aW9uLmRlbGV0ZSxwcmVzY3JpcHRpb24uZGV0YWlsLHByZXNjcmlwdGlvbi51cGRhdGUscHJlc2NyaXB0aW9uLmxpc3QscHJlc2NyaXB0aW9uLmxpc3RfYnlfcGF0aWVudCxtZWRpY2FsSGlzdG9yeS5hZGQsbWVkaWNhbEhpc3RvcnkuZGVsZXRlLG1lZGljYWxIaXN0b3J5LmRldGFpbCxtZWRpY2FsSGlzdG9yeS51cGRhdGUsbWVkaWNhbEhpc3RvcnkubGlzdCxtZWRpY2FsSGlzdG9yeS5saXN0X2J5X3BhdGllbnQiLCJpYXQiOjE2NzkxNTYyMDQsImV4cCI6MTY3OTE1ODAwNH0.gB2BITMa6enr7z54k0i1qKoNF_ZNS8fjxhFejtTTr7Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"newPassword\": \"Admin@01\",\n  \"oldPassword\": \"`J<V~(~bbv`7ho3fO*%5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user/change_password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"change_password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authentification",
+			"item": [
+				{
+					"name": "auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\": \"Admin@23\",\n \"email\": \"superadmin@test.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/authentification",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"authentification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh_token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/auth/refresh_token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh_token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "find all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NjFhZDk4Yi02NGE3LTRhMmItYTQzNS01NDY5YjY1NmQwOTMiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE1ODkyMCwiZXhwIjoxNjc5MTYwNzIwfQ.b_kmOsB2_D3PGWKogK8roLmuCDG5rmmHTW54IjZmETU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"code\": \"DOCTOR\",\n            \"name\": \"profile for doctors\",\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/profile/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYjA0NWJiYS0yYWI0LTQ4YmYtODkzYS03N2IwZGI1N2YxYmYiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE1OTQ0NiwiZXhwIjoxNjc5MTYxMjQ2fQ.0cA95In7i4dej5bY66IqSQVSINnNW_Oa9L71dr28WOM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"code\": \"TEST1\",\n            \"name\": \"profile for test\",\n            \"privileges\": [29,30]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/profile/update/65",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"update",
+								"65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/profile/detail/65",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"detail",
+								"65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYjA0NWJiYS0yYWI0LTQ4YmYtODkzYS03N2IwZGI1N2YxYmYiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE1OTQ0NiwiZXhwIjoxNjc5MTYxMjQ2fQ.0cA95In7i4dej5bY66IqSQVSINnNW_Oa9L71dr28WOM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"code\": \"TEST\",\n            \"name\": \"profile for tests\",\n            \"privileges\": [29,30,31]\n\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/profile/add",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJiZmJkYzU1Mi0zYjhlLTRkY2ItODU1Ni04ZWU1NjRjNzkxODYiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE1OTg0MCwiZXhwIjoxNjc5MTYxNjQwfQ.5au1QqiqVzfzE8r0nICfMfrSoeEpJKCU1U2OLwKpzQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/profile/delete/65",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"delete",
+								"65"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "doctor",
+			"item": [
+				{
+					"name": "find all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/doctor/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"firstName\": \"updated firstName\",\n            \"lastName\": \"updated lastName\",\n            \"emailAddress\": \"test@test.com\",\n            \"specialization\": \"pediatrician\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/doctor/update/69",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"update",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/doctor/detail/69",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"detail",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMzE1NzUyZi02MDMwLTRmY2EtOGQ3ZC04NmE2ODFhN2IxOGIiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2OTY1OSwiZXhwIjoxNjc5MTcxNDU5fQ.o0VyVi-pRbZ1tb8644uusEmLnAjrO9vrdPUPQp0OISY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test\",\n    \"emailAddress\": \"test@test11.dz\",\n    \"specialization\": \"pediatrician\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/doctor/add",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/doctor/delete/69",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"delete",
+								"69"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"item": [
+				{
+					"name": "find all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patient/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/patient/detail/76",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"detail",
+								"76"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMzE1NzUyZi02MDMwLTRmY2EtOGQ3ZC04NmE2ODFhN2IxOGIiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2OTY1OSwiZXhwIjoxNjc5MTcxNDU5fQ.o0VyVi-pRbZ1tb8644uusEmLnAjrO9vrdPUPQp0OISY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"firstName\": \"test\",\n            \"lastName\": \"test\",\n            \"dateOfBirth\": \"1990-01-19\",\n           \"emailAddress\": \"test@test111.dz\",\n            \"address\": \"cite 20 aute\"\n\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patient/add",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/patient/delete/76",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"delete",
+								"76"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YjM3YTQ2OC03NzYwLTQ1OWQtOTU1Zi0zZmJiN2ZkYzQwY2UiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2MDY2MSwiZXhwIjoxNjc5MTYyNDYxfQ.Jw3EE395HDfI6090LUtgMVr_dhKaMaAYn0mD2jpfxP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"firstName\": \"test\",\n            \"lastName\": \"test\",\n            \"dateOfBirth\": \"1990-01-19\",\n           \"emailAddress\": \"test@test1.dz\",\n            \"address\": \"cite 20 aute\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/patient/update/76",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"update",
+								"76"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "appointment",
+			"item": [
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkYmM1Zjc3ZC04ODZlLTQyMDgtYWRlMy00NTNiZGI0ZTBjMzkiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MDc0OCwiZXhwIjoxNjc5MTcyNTQ4fQ.j-Bf7j-BesKOn-Ip96lk-JAcCbdtneGHlL3A8XSACcA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/appointment/detail/84",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"detail",
+								"84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMzE1NzUyZi02MDMwLTRmY2EtOGQ3ZC04NmE2ODFhN2IxOGIiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2OTY1OSwiZXhwIjoxNjc5MTcxNDU5fQ.o0VyVi-pRbZ1tb8644uusEmLnAjrO9vrdPUPQp0OISY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"doctor\": 80,\n            \"patient\": 83,\n            \"dateAndTime\": \"2023-04-19\",\n           \"reason\": \"illness\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/appointment/add",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkYmM1Zjc3ZC04ODZlLTQyMDgtYWRlMy00NTNiZGI0ZTBjMzkiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MDc0OCwiZXhwIjoxNjc5MTcyNTQ4fQ.j-Bf7j-BesKOn-Ip96lk-JAcCbdtneGHlL3A8XSACcA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/appointment/cancel/84",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"cancel",
+								"84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accomplishe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkYmM1Zjc3ZC04ODZlLTQyMDgtYWRlMy00NTNiZGI0ZTBjMzkiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MDc0OCwiZXhwIjoxNjc5MTcyNTQ4fQ.j-Bf7j-BesKOn-Ip96lk-JAcCbdtneGHlL3A8XSACcA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/appointment/end/84",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"end",
+								"84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2ZjQ4YTViMC1lYzY2LTQwODctODQ5NS05NTA5YTdiNWFiZmIiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MDU0NSwiZXhwIjoxNjc5MTcyMzQ1fQ.RvgFhey1kTH_l2d8to5fa2I-TGaHIiGjfZapg45zo_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctor\": 80,\n    \"patient\": 83,\n    \"dateAndTime\": \"2023-04-19\",\n    \"reason\": \"illness\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/appointment/update/84",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"update",
+								"84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkMzE1NzUyZi02MDMwLTRmY2EtOGQ3ZC04NmE2ODFhN2IxOGIiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE2OTY1OSwiZXhwIjoxNjc5MTcxNDU5fQ.o0VyVi-pRbZ1tb8644uusEmLnAjrO9vrdPUPQp0OISY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/appointment/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all by patient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/appointment/find_all_by_patient/83",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"find_all_by_patient",
+								"83"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "prescription",
+			"item": [
+				{
+					"name": "find all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzMDA3YmZmOS05ZmYxLTRlZTMtODhiMy1hM2FhZTRjNzk2ZDAiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTQ0OSwiZXhwIjoxNjc5MTczMjQ5fQ.0CNzrYQnDzxW0sv2UIaS0uVGB9rf2QSwDtP6pBJBMqE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/prescription/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"prescription",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzMDA3YmZmOS05ZmYxLTRlZTMtODhiMy1hM2FhZTRjNzk2ZDAiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTQ0OSwiZXhwIjoxNjc5MTczMjQ5fQ.0CNzrYQnDzxW0sv2UIaS0uVGB9rf2QSwDtP6pBJBMqE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/prescription/detail/88",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"prescription",
+								"detail",
+								"88"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkYmM1Zjc3ZC04ODZlLTQyMDgtYWRlMy00NTNiZGI0ZTBjMzkiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MDc0OCwiZXhwIjoxNjc5MTcyNTQ4fQ.j-Bf7j-BesKOn-Ip96lk-JAcCbdtneGHlL3A8XSACcA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"doctor\": 80,\n            \"patient\": 83,\n            \"startDate\": \"2023-04-19\",\n            \"endDate\": \"2023-04-24\",\n            \"medication\": \"paracetamol\",\n            \"dosage\": 1000,\n            \"frequency\": 3\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/prescription/add",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"prescription",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MGE1NDNlNi1iZjhmLTQxNTgtOWRkNS1mNjFhN2I5ODQ0NjAiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTYzMywiZXhwIjoxNjc5MTczNDMzfQ.jliHXKriPtPHxZ9aY-FP7G3r9MeKSOytKWU6ORteRfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/prescription/delete/88",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"prescription",
+								"delete",
+								"88"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MGE1NDNlNi1iZjhmLTQxNTgtOWRkNS1mNjFhN2I5ODQ0NjAiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTYzMywiZXhwIjoxNjc5MTczNDMzfQ.jliHXKriPtPHxZ9aY-FP7G3r9MeKSOytKWU6ORteRfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"doctor\": 80,\n            \"patient\": 83,\n            \"startDate\": \"2023-04-19\",\n            \"endDate\": \"2023-04-24\",\n            \"medication\": \"proton\",\n            \"dosage\": 300,\n            \"frequency\": 2\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/prescription/update/88",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"prescription",
+								"update",
+								"88"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all by patient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/prescription/find_all_by_patient/83",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"prescription",
+								"find_all_by_patient",
+								"83"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "medicalHistory",
+			"item": [
+				{
+					"name": "find all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/medicalHistory/find_all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"medicalHistory",
+								"find_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/medicalHistory/detail/93",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"medicalHistory",
+								"detail",
+								"93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"doctor\": 80,\n            \"patient\": 83,\n            \"startDate\": \"2023-04-19\",\n            \"notes\": \"none\",\n            \"diagnosis\": \"covid\",\n            \"treatment\": \"vit C\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/medicalHistory/add",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"medicalHistory",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/medicalHistory/delete/93",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"medicalHistory",
+								"delete",
+								"93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"doctor\": 80,\n            \"patient\": 83,\n            \"startDate\": \"2023-04-19\",\n            \"notes\": \"none\",\n            \"diagnosis\": \"covid\",\n            \"treatment\": \"zink\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/medicalHistory/update/93",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"medicalHistory",
+								"update",
+								"93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all by patient Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmYzdmZWNhYy00ODI5LTQzZWQtOGJhZC0wODI5YThiMTA4YTUiLCJzdWIiOiJzdXBlcmFkbWluQHRlc3QuY29tIiwicm9sZXMiOiJwcm9maWxlLmFkZCxwcm9maWxlLmRlbGV0ZSxwcm9maWxlLmRldGFpbCxwcm9maWxlLnVwZGF0ZSxwcm9maWxlLmxpc3QsdXNlci5hZGQsdXNlci5kZWxldGUsdXNlci5kZXRhaWwsdXNlci51cGRhdGUsdXNlci5saXN0LGRvY3Rvci5hZGQsZG9jdG9yLmRlbGV0ZSxkb2N0b3IuZGV0YWlsLGRvY3Rvci51cGRhdGUsZG9jdG9yLmxpc3QscGF0aWVudC5hZGQscGF0aWVudC5kZWxldGUscGF0aWVudC5kZXRhaWwscGF0aWVudC51cGRhdGUscGF0aWVudC5saXN0LGFwcG9pbnRtZW50LmFkZCxhcHBvaW50bWVudC5jYW5jZWwsYXBwb2ludG1lbnQuZW5kLGFwcG9pbnRtZW50LmRldGFpbCxhcHBvaW50bWVudC51cGRhdGUsYXBwb2ludG1lbnQubGlzdCxhcHBvaW50bWVudC5saXN0X2J5X3BhdGllbnQscHJlc2NyaXB0aW9uLmFkZCxwcmVzY3JpcHRpb24uZGVsZXRlLHByZXNjcmlwdGlvbi5kZXRhaWwscHJlc2NyaXB0aW9uLnVwZGF0ZSxwcmVzY3JpcHRpb24ubGlzdCxwcmVzY3JpcHRpb24ubGlzdF9ieV9wYXRpZW50LG1lZGljYWxIaXN0b3J5LmFkZCxtZWRpY2FsSGlzdG9yeS5kZWxldGUsbWVkaWNhbEhpc3RvcnkuZGV0YWlsLG1lZGljYWxIaXN0b3J5LnVwZGF0ZSxtZWRpY2FsSGlzdG9yeS5saXN0LG1lZGljYWxIaXN0b3J5Lmxpc3RfYnlfcGF0aWVudCIsImlhdCI6MTY3OTE3MTkxNiwiZXhwIjoxNjc5MTczNzE2fQ.arlrS68yqqz5U8ypaa6RpKugpoKhhsEOxQpM3afOlWo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/medicalHistory/find_all_by_patient/83",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"medicalHistory",
+								"find_all_by_patient",
+								"83"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
